@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>WeatherX</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="nav">
+  <h2>WeatherX</h2>
+
+  <div class="search-box">
+    <input id="city" placeholder="Enter city"/>
+    <button onclick="searchWeather()">Search</button>
+    <button id="themeToggle">🌙</button>
+  </div>
+</div>
+
+<div id="loader" class="loader hidden">Fetching weather...</div>
+<div id="error" class="error hidden"></div>
+
+<div class="card">
+  <h2 id="cityName">--</h2>
+  <img id="icon"/>
+  <h1 id="temp">--°C</h1>
+  <p id="desc"></p>
+  <p id="extra"></p>
+  <p id="sun"></p>
+</div>
+<div class="hourly" id="hourly"></div>
+
+<div class="forecast" id="forecast"></div>
+<canvas id="tempChart" height="100"></canvas>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<footer>&copy; Made by Pranav • All rights reserved </footer>
+<script src="script.js"></script>
+</body>
+</html>

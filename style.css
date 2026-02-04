@@ -1,0 +1,287 @@
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family: Arial, sans-serif;
+}
+
+/* ===== BODY ===== */
+body{
+  min-height:100vh;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  background: linear-gradient(135deg,#000000,#06062b);
+  color:white;
+  transition:0.3s;
+  padding:30px 20px;   /* ⬅️ more breathing space */
+}
+html, body{
+  min-height: 100%;
+  background: #000000;
+}
+body.light{
+  background: linear-gradient(135deg,#37afff,#2886e4);
+}
+html::-webkit-scrollbar,
+body::-webkit-scrollbar {
+  width: 0px;
+  background: transparent;
+}
+html{
+  scroll-behavior: smooth;
+}
+
+/* Firefox */
+html, body {
+  scrollbar-width: none;
+}
+
+body.light{
+  min-height:100vh;
+}
+
+
+
+body.light{
+  background: linear-gradient(135deg,#37afff,#2886e4);
+  color:#ffffff;
+}
+
+/* ===== NAVBAR ===== */
+.nav{
+  width:100%;
+  max-width:900px;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  margin-bottom:35px;  /* ⬅️ increased gap */
+}
+
+.search-box{
+  display:flex;
+  gap:12px; /* ⬅️ thoda zyada space */
+}
+
+input,button{
+  padding:10px 14px;
+  border:none;
+  border-radius:10px;
+  outline:none;
+  font-size:14px;
+}
+
+button{
+  cursor:pointer;
+  transition:0.2s;
+}
+
+button:hover{
+  transform:scale(1.05);
+}
+
+/* ===== LOADER & ERROR ===== */
+.loader,
+.error{
+  margin:15px 0; /* ⬅️ vertical spacing */
+  padding:10px 15px;
+  border-radius:10px;
+  font-size:14px;
+}
+
+.loader{
+  background:#ffffff22;
+}
+
+.error{
+  background:#ff4d4d;
+  color:white;
+}
+
+.hidden{
+  display:none;
+}
+
+/* ===== MAIN CARD ===== */
+.card{
+  backdrop-filter: blur(20px);
+  background: rgba(255,255,255,0.15);
+  border-radius:20px;
+  padding:30px;      /* ⬅️ more inner spacing */
+  width:100%;
+  max-width:400px;
+  text-align:center;
+  box-shadow:0 10px 30px rgba(0,0,0,0.3);
+  margin-bottom:30px; /* ⬅️ gap below card */
+}
+
+/* ===== HOURLY ===== */
+.hourly{
+  margin-top:25px;
+  margin-bottom:30px;
+  display:flex;
+  gap:14px;  /* ⬅️ cards ke beech gap */
+  overflow-x:auto;
+  max-width:900px;
+  padding-bottom:10px;
+  scroll-behavior:smooth;
+}
+
+.hour{
+  min-width:95px;
+  background: rgba(255,255,255,0.15);
+  border-radius:14px;
+  padding:12px; /* ⬅️ bigger padding */
+  text-align:center;
+  font-size:14px;
+  backdrop-filter: blur(10px);
+}
+
+/* ===== 5 DAY FORECAST ===== */
+.forecast{
+  margin-top:10px;
+  margin-bottom:35px;
+  display:flex;
+  gap:14px;
+  overflow-x:auto;
+  max-width:900px;
+  scroll-behavior:smooth;
+}
+
+.day{
+  min-width:135px;
+  background: rgba(255,255,255,0.15);
+  border-radius:16px;
+  padding:14px; /* ⬅️ more spacing */
+  text-align:center;
+  backdrop-filter: blur(10px);
+}
+
+/* ===== SCROLLBAR HIDE ===== */
+.hourly::-webkit-scrollbar,
+.forecast::-webkit-scrollbar{
+  display:none;
+}
+
+.hourly,
+.forecast{
+  scrollbar-width:none;
+}
+
+/* ===== CHART ===== */
+canvas{
+  width:100%;
+  max-width:900px;
+  margin-top:40px; /* ⬅️ more gap above graph */
+}
+
+/* ===== FOOTER ===== */
+footer{
+  margin-top:45px; /* ⬅️ footer down push */
+  opacity:0.8;
+  font-size:14px;
+  text-align:center;
+}
+
+/* ===== FULL PAGE SCROLLBAR HIDE ===== */
+body::-webkit-scrollbar {
+  width: 0px;
+  background: transparent;
+}
+
+body {
+  scrollbar-width: none;
+}
+/* ===== TABLET ===== */
+@media (max-width: 900px){
+
+  .nav{
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .search-box{
+    width: 100%;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  .card{
+    max-width: 90%;
+  }
+
+  .hourly,
+  .forecast,
+  canvas{
+    max-width: 95%;
+  }
+}
+
+
+/* ===== MOBILE ===== */
+@media (max-width: 600px){
+
+  body{
+    padding: 20px 10px;
+  }
+
+  h2{
+    font-size: 20px;
+    text-align: center;
+  }
+
+  input{
+    width: 140px;
+  }
+
+  .card{
+    padding: 22px;
+  }
+
+  .hour{
+    min-width: 80px;
+    font-size: 13px;
+  }
+
+  .day{
+    min-width: 110px;
+    font-size: 13px;
+  }
+
+  canvas{
+    margin-top: 30px;
+  }
+
+  footer{
+    font-size: 12px;
+    text-align: center;
+    padding-bottom: 10px;
+  }
+}
+
+
+/* ===== SMALL PHONES ===== */
+@media (max-width: 400px){
+
+  input{
+    width: 120px;
+    font-size: 13px;
+  }
+
+  button{
+    padding: 8px 10px;
+    font-size: 12px;
+  }
+
+  .hour{
+    min-width: 70px;
+  }
+
+  .day{
+    min-width: 95px;
+  }
+
+  .card{
+    padding: 18px;
+  }
+}
